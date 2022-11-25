@@ -10,9 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use(authRoutes);
 
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log("Servidor iniciado!!!");
 });
 
