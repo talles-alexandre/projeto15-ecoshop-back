@@ -46,7 +46,11 @@ export async function createUser(req, res) {
     await db.collection("users").insertOne({
       name: newUser.name,
       email: newUser.email,
+      tel: newUser.tel,
+      cpf: newUser.cpf,
       password: passwordHash,
+      repeatPassword: passwordHash,
+
     });
     res.status(200).send("cadastrou");
   } catch (error) {
