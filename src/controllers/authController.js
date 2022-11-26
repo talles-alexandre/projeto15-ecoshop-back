@@ -4,8 +4,10 @@ import { v4 as uuid } from "uuid";
 import { authCadastroSchema, authLoginSchema } from "../schemas/authSchema.js";
 
 export async function loginUser(req, res) {
+  const user = req.body;
+  console.log(user);
   try {
-    const user = req.body;
+    
     const validate = authLoginSchema.validate(user);
     if (validate.error) {
      const errors=  validate.error.details.forEach((error) => {

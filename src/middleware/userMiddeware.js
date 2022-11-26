@@ -1,13 +1,13 @@
 import db from "../databases/mongodb.js";
 
 export async function userMiddleware(req, res, next) {
-  const { authorization } = req.headers;
-  const isToken = authorization?.replace("Bearer ", "");
-  console.log(isToken.toString());
-  if (!isToken) {
-    res.status(401).send("token não existe");
-    return;
-  }
+  // const { authorization } = req.headers;
+  // const isToken = authorization?.replace("Bearer ", "");
+  // console.log(isToken.toString());
+  // if (!isToken) {
+  //   res.status(401).send("token não existe");
+  //   return;
+  // }
 
   try {
     const session = await db.collection("sessions").findOne({token: isToken});

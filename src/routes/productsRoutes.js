@@ -5,7 +5,7 @@ import { userMiddleware } from "../middleware/userMiddeware.js";
 
 const router = Router();
 
-router.use(userMiddleware);
+// router.use(userMiddleware);
 router.get("/products", envProducts);
 router.get("/requests", envRequests);
 router.post("/payment", processPayment);
