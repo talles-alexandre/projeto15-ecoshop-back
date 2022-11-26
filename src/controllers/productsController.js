@@ -1,9 +1,9 @@
 import db from "../databases/mongodb.js";
 
 export async function envProducts(req, res) {
-    user = res.locals.user;
+    const user = res.locals.user;
   try {
-    console.log(token)
+    console.log(user)
     const products = await db.collection("products").find({}).toArray();
     res.send({products, user});
   } catch (error) {

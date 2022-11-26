@@ -2,8 +2,8 @@ import db from "../databases/mongodb.js";
 
 export async function userMiddleware(req, res, next) {
   const { authorization } = req.headers;
-  const isToken = authorization?.replace("Bearer", "");
-  console.log(isToken);
+  const isToken = authorization?.replace("Bearer ", "");
+  console.log(isToken.toString());
   if (!isToken) {
     res.status(401).send("token não existe");
     return;
