@@ -65,7 +65,12 @@ export async function createUser(req, res) {
       tel: newUser.tel,
       cpf: newUser.cpf,
       dateBirth: newUser.dateBirth,
-      adress: newUser.adress,
+      adress: {
+        street: newUser.street,
+        number: newUser.number,
+        complement: newUser.complement,
+        cep: newUser.cep
+      },
       password: passwordHash,
 
     });

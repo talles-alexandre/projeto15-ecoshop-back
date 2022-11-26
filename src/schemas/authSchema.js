@@ -1,17 +1,14 @@
 import joi from "joi";
 
 export const authCadastroSchema = joi.object({
-  name: joi.string().required(),
+  name: joi.string().min(3).required(),
   email: joi.string().email().required(),
   tel: joi.string().required(),
   cpf: joi.string().max(11).required(),
-  dateBirth: joi.string().required(),
-  // adress: {
-  //   street: joi.string().required(),
-  //   number: joi.number().required(),
-  //   complement: joi.string().required(),
-  //   cep: joi.number().max(8).required(),
-  // },
+    street: joi.string().required(),
+    number: joi.string().required(),
+    complement: joi.string().required(),
+    cep: joi.string().max(8).required(),
   password: joi.string().required(),
   repeatPassword: joi.ref("password")
   
