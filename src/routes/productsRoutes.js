@@ -1,6 +1,6 @@
 
 import { Router } from "express";
-import { envProducts } from "../controllers/prodoctsController.js";
+import { envProducts, envRequests, processPayment } from "../controllers/productsController.js";
 import { userMiddleware } from "../middleware/userMiddeware.js";
 
 const router = Router();

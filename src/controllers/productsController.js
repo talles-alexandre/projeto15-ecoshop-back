@@ -4,7 +4,7 @@ export async function envProducts(req, res) {
     user = res.locals.user;
   try {
     console.log(token)
-    const products = await db.collection("products").find().toArray();
+    const products = await db.collection("products").find({}).toArray();
     res.send({products, user});
   } catch (error) {
     console.error("Erro ao obter produtos");
