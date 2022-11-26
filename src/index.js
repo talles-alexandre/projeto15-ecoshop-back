@@ -21,6 +21,7 @@ app.listen(PORT, () => {
 //   "email": "gus@gmail.com",
 //   "tel": "65996506397",
 //   "cpf": 07786047131,
+//   "dateBirth": "25/05/1997",
 //   "adress": {
 //     "street": "rua aracua",
 //    "number": 286,
