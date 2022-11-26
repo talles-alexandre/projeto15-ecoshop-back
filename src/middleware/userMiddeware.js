@@ -22,3 +22,4 @@ export async function userMiddleware(req, res, next) {
     return res.sendStatus(500);
   }
 }
+
