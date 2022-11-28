@@ -30,13 +30,13 @@ export async function loginUser(req, res) {
       return res.status(422).send("Email ou senha inválidos");
     }
     const isToken = await db.collection("sessions").findOne({userId: checkUser._id});
-    if(isToken) {
-      return res.send({token: isToken.token});
-    }
-    const token = uuid();
-    await db
-      .collection("sessions")
-      .insertOne({ token, userId: checkUser._id });
+   // if(isToken) {
+     // return res.send({token: isToken.token});
+   // }
+    //const token = uuid();
+    //await db
+      //.collection("sessions")
+     // .insertOne({ token, userId: checkUser._id });
     return res.status(200).send({ checkUser });
   } catch (error) {
     console.error("Erro ao logar o usuário");
