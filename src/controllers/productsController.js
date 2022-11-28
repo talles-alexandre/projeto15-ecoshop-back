@@ -24,13 +24,14 @@ export async function envRequests(req, res) {
 
 export async function processPayment(req, res) {
     user = res.locals.user;
+    if (!user) return res.send("voce precisa estar logado para comprar");
   try {
     const { products } = req.body;
     const newRequest = {
       userId: user._id,
       products,
       totalPrice,
-      status: "Em processamento",
+      status: "pedido recebido",
     };
     await db.collection("requests").insertOne(newRequest);
     res.sendStatus(200);
