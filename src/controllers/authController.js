@@ -37,7 +37,7 @@ export async function loginUser(req, res) {
     await db
       .collection("sessions")
       .insertOne({ token, userId: checkUser._id });
-    return res.status(200).send({ checkUser});
+    return res.status(200).send({ checkUser });
   } catch (error) {
     console.error("Erro ao logar o usuário");
     res.status(500).send("Erro ao logar o usuário");
